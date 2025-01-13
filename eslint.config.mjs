@@ -43,6 +43,7 @@ const eslintConfig = [
         },
       ],
       '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+      '@typescript-eslint/no-unsafe-assignment': 'error',
       '@typescript-eslint/require-await': 'off',
       '@typescript-eslint/no-misused-promises': [
         'error',
@@ -50,13 +51,13 @@ const eslintConfig = [
           checksVoidReturn: { attributes: false },
         },
       ],
-      'unicorn/filename-case': [
-        'error',
-        {
-          case: 'kebabCase',
-        },
-      ],
-      'func-style': ['error', 'declaration', { allowArrowFunctions: false }],
+      // 'unicorn/filename-case': [
+      //   'error',
+      //   {
+      //     case: 'kebabCase',
+      //   },
+      // ],
+      'func-style': ['error', 'declaration', { allowArrowFunctions: true }],
       'prefer-arrow-callback': ['error', { allowNamedFunctions: false }],
       'import/no-default-export': 'error',
     },
@@ -69,7 +70,7 @@ const eslintConfig = [
     },
   },
   {
-    ignores: ['src/components/ui/*', '*.md'],
+    ignores: ['src/components/ui/*', '*.md', 'src/app/api/auth/*'],
   },
 ];
 
