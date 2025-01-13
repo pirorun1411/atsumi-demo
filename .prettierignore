@@ -15,3 +15,4 @@ yarn.lock
 pnpm-lock.yaml
 next.config.ts
 tailwind.config.ts
+README.md
