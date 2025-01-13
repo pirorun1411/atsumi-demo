@@ -22,6 +22,7 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 ## ディレクトリ構成
 
+```bash
 ├── app ... ルーティングに関するコンポーネント
 ├── features ... ロジック + コンポーネントをまとめたもの
 │ ├── common ... 共通部分
@@ -32,3 +33,4 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 ├── constants ... 定数
 ├── types ... 型定義
 ├── providers ... プロバイダー
+```
