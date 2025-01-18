@@ -25,7 +25,6 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 ```bash
 ├── app ... ルーティングに関するコンポーネント
 ├── features ... ロジック + コンポーネントをまとめたもの
-│ ├── common ... 共通部分
 │ └── routes ... 特定のページで使うもの
 ├── components ... 共通コンポーンネント
 ├── hooks ... 共通ロジックの内、React Hooksが「ある」もの
