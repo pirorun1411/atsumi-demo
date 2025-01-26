@@ -27,10 +27,9 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang='ja'>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`body ${geistSans.variable} ${geistMono.variable} antialiased`}>
         <NextAuthProvider>
           <AppRouterCacheProvider>
-            <Header />
             <main>{children}</main>
           </AppRouterCacheProvider>
         </NextAuthProvider>

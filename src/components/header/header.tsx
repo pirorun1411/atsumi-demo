@@ -11,7 +11,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 
 const pages: PageLink[] = [
   { title: 'title1', path: '/user' },
-  { title: 'title2', path: '/user' },
+  { title: 'title2', path: '/poke' },
   { title: 'title3', path: '/user' },
   { title: 'title4', path: '/user' },
   { title: 'title5', path: '/user' },
@@ -29,14 +29,13 @@ export const Header = () => {
   };
 
   return (
-    <AppBar position='static' style={{ background: 'transparent', boxShadow: 'none' }} sx={{ height: 50 }}>
+    <AppBar position='sticky' style={{ background: 'transparent', boxShadow: 'none' }} sx={{ height: 50 }}>
       <Toolbar disableGutters variant='dense'>
         <Box sx={{ ml: 3 }}>
-          <IconButton onClick={handleClickHomeIcon}>
-            <Typography variant='h6' component='div' color='primary'>
+          <IconButton onClick={handleClickHomeIcon} color='primary'>
+            <Typography variant='h5' component='div' color='primary'>
               App
             </Typography>
-
             <CatchingPokemonIcon />
           </IconButton>
         </Box>
@@ -46,8 +45,8 @@ export const Header = () => {
             <LinkComponent page={page} key={page.title} />
           ))}
         </Stack>
-        <Box sx={{ ml: 5 }}>
-          <IconButton onClick={handleClickAccountIcon}>
+        <Box sx={{ mr: 3 }}>
+          <IconButton onClick={handleClickAccountIcon} color='primary'>
             <AccountCircle />
           </IconButton>
         </Box>
