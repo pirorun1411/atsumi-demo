@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import './globals.css';
 import { NextAuthProvider } from '@/providers/NextAuth';
-import { Header } from '@/components/header/header';
+import ClientProvider from './clientProvider';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -30,7 +30,7 @@ export default async function RootLayout({
       <body className={`body ${geistSans.variable} ${geistMono.variable} antialiased`}>
         <NextAuthProvider>
           <AppRouterCacheProvider>
-            <main>{children}</main>
+            <ClientProvider>{children}</ClientProvider>
           </AppRouterCacheProvider>
         </NextAuthProvider>
       </body>

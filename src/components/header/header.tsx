@@ -10,9 +10,9 @@ import type { PageLink } from './headerType';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 
 const pages: PageLink[] = [
-  { title: 'title1', path: '/user' },
-  { title: 'title2', path: '/poke' },
-  { title: 'title3', path: '/user' },
+  { title: 'センタリング', path: '/centering' },
+  { title: '相場', path: '/poke' },
+  { title: '仕入れ', path: '/purchase' },
   { title: 'title4', path: '/user' },
   { title: 'title5', path: '/user' },
 ];
@@ -29,12 +29,12 @@ export const Header = () => {
   };
 
   return (
-    <AppBar position='sticky' style={{ background: 'transparent', boxShadow: 'none' }} sx={{ height: 50 }}>
+    <AppBar style={{ position: 'sticky', background: 'transparent', boxShadow: 'none' }} sx={{ height: 50 }}>
       <Toolbar disableGutters variant='dense'>
         <Box sx={{ ml: 3 }}>
           <IconButton onClick={handleClickHomeIcon} color='primary'>
             <Typography variant='h5' component='div' color='primary'>
-              App
+              App for Myself
             </Typography>
             <CatchingPokemonIcon />
           </IconButton>
