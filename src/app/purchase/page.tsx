@@ -3,223 +3,53 @@
 import { type GridRowsProp } from '@mui/x-data-grid';
 import { PurchaseClient } from '@/components/purchase/purchase';
 
+type PurchaseItem = {
+  id: string;
+  productName?: string;
+  supplier?: string;
+  purchasePrice?: string;
+  customer?: string;
+  sellingPrice?: string;
+  commission?: string;
+  shippingCost?: string;
+  profit?: string;
+  profitMargin?: string;
+  status?: string;
+};
+
 export default async function Purchase() {
   // ssrでデータ取得
-  // const initialData = await fetch('https://api.example.com/data').then((res) => res.json());
-  const mockData: GridRowsProp = [
-    {
-      id: 1,
-      productName: 'ピカチュウ',
-      supplier: 'メルカリ',
-      purchasePrice: '1000',
-      customer: 'メルカリ',
-      sellingPrice: '1500',
-      commission: '150',
-      shippingCost: '100',
-      profit: '1250',
-      profitMargin: '125',
-      status: '販売済み',
-    },
-    {
-      id: 2000,
-      productName: 'メガリザードン sar psa10',
-      supplier: 'メルカリ',
-      purchasePrice: '1000',
-      customer: 'メルカリ',
-      sellingPrice: '1500',
-      commission: '150',
-      shippingCost: '100',
-      profit: '1250',
-      profitMargin: '125',
-      status: '販売済み',
-    },
-    {
-      id: 3,
-      productName: 'ピカチュウ',
-      supplier: 'ebay',
-      purchasePrice: '10000000',
-      customer: 'メルカリ',
-      sellingPrice: '1500',
-      commission: '150',
-      shippingCost: '100',
-      profit: '1250',
-      profitMargin: '125',
-      status: '販売済み',
-    },
-    {
-      id: 4,
-      productName: 'ピカチュウ',
-      supplier: 'SNKRDUNK',
-      purchasePrice: '1000',
-      customer: 'メルカリ',
-      sellingPrice: '1500',
-      commission: '150',
-      shippingCost: '100',
-      profit: '1250',
-      profitMargin: '125',
-      status: '販売済み',
-    },
-    {
-      id: 5,
-      productName: 'ピカチュウ',
-      supplier: 'メルカリ',
-      purchasePrice: '1000',
-      customer: 'メルカリ',
-      sellingPrice: '1500',
-      commission: '150000',
-      shippingCost: '1000',
-      profit: '1250',
-      profitMargin: '125',
-      status: '販売済み',
-    },
-    {
-      id: 6,
-      productName: 'ピカチュウ',
-      supplier: 'メルカリ',
-      purchasePrice: '1000',
-      customer: 'メルカリ',
-      sellingPrice: '1500',
-      commission: '150',
-      shippingCost: '100',
-      profit: '1250',
-      profitMargin: '125',
-      status: '販売済み',
-    },
-    {
-      id: 7,
-      productName: 'ピカチュウ',
-      supplier: 'メルカリ',
-      purchasePrice: '1000',
-      customer: 'メルカリ',
-      sellingPrice: '1500',
-      commission: '150',
-      shippingCost: '100',
-      profit: '1250',
-      profitMargin: '125',
-      status: '販売済み',
-    },
-    {
-      id: 8,
-      productName: 'ピカチュウ',
-      supplier: 'メルカリ',
-      purchasePrice: '1000',
-      customer: 'メルカリ',
-      sellingPrice: '1500',
-      commission: '150',
-      shippingCost: '100',
-      profit: '1250',
-      profitMargin: '125',
-      status: '販売済み',
-    },
-    {
-      id: 9,
-      productName: 'ピカチュウ',
-      supplier: 'メルカリ',
-      purchasePrice: '1000',
-      customer: 'メルカリ',
-      sellingPrice: '1500',
-      commission: '150',
-      shippingCost: '100',
-      profit: '1250',
-      profitMargin: '125',
-      status: '販売済み',
-    },
-    {
-      id: 10,
-      productName: 'ピカチュウ',
-      supplier: 'メルカリ',
-      purchasePrice: '1000',
-      customer: 'メルカリ',
-      sellingPrice: '1500',
-      commission: '150',
-      shippingCost: '100',
-      profit: '1250',
-      profitMargin: '125',
-      status: '販売済み',
-    },
-    {
-      id: 11,
-      productName: 'ピカチュウ',
-      supplier: 'メルカリ',
-      purchasePrice: '1000',
-      customer: 'メルカリ',
-      sellingPrice: '1500',
-      commission: '150',
-      shippingCost: '100',
-      profit: '1250',
-      profitMargin: '125',
-      status: '販売済み',
-    },
-    {
-      id: 12,
-      productName: 'ピカチュウ',
-      supplier: 'メルカリ',
-      purchasePrice: '1000',
-      customer: 'メルカリ',
-      sellingPrice: '1500',
-      commission: '150',
-      shippingCost: '100',
-      profit: '1250',
-      profitMargin: '125',
-      status: '販売済み',
-    },
-    {
-      id: 13,
-      productName: 'ピカチュウ',
-      supplier: 'メルカリ',
-      purchasePrice: '1000',
-      customer: 'メルカリ',
-      sellingPrice: '1500',
-      commission: '150',
-      shippingCost: '100',
-      profit: '1250',
-      profitMargin: '125',
-      status: '販売済み',
-    },
-    {
-      id: 14,
-      productName: 'ピカチュウ',
-      supplier: 'メルカリ',
-      purchasePrice: '1000',
-      customer: 'メルカリ',
-      sellingPrice: '1500',
-      commission: '150',
-      shippingCost: '100',
-      profit: '1250',
-      profitMargin: '125',
-      status: '販売済み',
-    },
-    {
-      id: 15,
-      productName: 'ピカチュウ',
-      supplier: 'メルカリ',
-      purchasePrice: '1000',
-      customer: 'メルカリ',
-      sellingPrice: '1500',
-      commission: '150',
-      shippingCost: '100',
-      profit: '1250',
-      profitMargin: '125',
-      status: '販売済み',
-    },
-    {
-      id: 16,
-      productName: 'ピカチュウ',
-      supplier: 'メルカリ',
-      purchasePrice: '1000',
-      customer: 'メルカリ',
-      sellingPrice: '1500',
-      commission: '150',
-      shippingCost: '100',
-      profit: '1250',
-      profitMargin: '125',
-      status: '販売済み',
-    },
-  ];
+  let initialData: GridRowsProp = [];
+
+  try {
+    const response = await fetch('http://localhost:3000/api/purchase');
+    if (!response.ok) {
+      throw new Error(`API error: ${response.status}`);
+    }
+
+    const purchases = (await response.json()) as PurchaseItem[];
+
+    initialData = purchases.map((item: PurchaseItem) => ({
+      id: Number(item.id),
+      productName: item.productName,
+      supplier: item.supplier,
+      purchasePrice: item.purchasePrice,
+      customer: item.customer,
+      sellingPrice: item.sellingPrice,
+      commission: item.commission,
+      shippingCost: item.shippingCost,
+      profit: item.profit,
+      profitMargin: item.profitMargin,
+      status: item.status,
+    }));
+  } catch (error) {
+    console.error('Failed to fetch data from API:', error);
+    // フォールバックとして空のデータを設定
+  }
 
   return (
     <>
-      <PurchaseClient initialData={mockData} />
+      <PurchaseClient initialData={initialData} />
     </>
   );
 }

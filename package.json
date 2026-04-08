@@ -8,9 +8,14 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "prettier": "prettier --config .prettierrc --write ."
+    "prettier": "prettier --config .prettierrc --write .",
+    "db:create": "node scripts/createTable.js",
+    "db:seed": "node scripts/seedData.js",
+    "db:setup": "npm run db:create && npm run db:seed"
   },
   "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.1026.0",
+    "@aws-sdk/lib-dynamodb": "^3.1026.0",
     "@emotion/cache": "^11.14.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
